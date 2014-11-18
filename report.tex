@@ -14,38 +14,39 @@
 
 \lstset{ %
   backgroundcolor=\color{mygray},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-  basicstyle=\ttfamily\footnotesize,        % the size of the fonts that are used for the code
-  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  basicstyle=\ttfamily\scriptsize,        % the size of the fonts that are used for the code
+  %breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
-  captionpos=b,                    % sets the caption-position to bottom
+  %captionpos=b,                    % sets the caption-position to bottom
   commentstyle=\color{mygreen},    % comment style
-  deletekeywords={...},            % if you want to delete keywords from the given language
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-  %frame=single,                    % adds a frame around the code
+  %deletekeywords={...},            % if you want to delete keywords from the given language
+  %escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=false,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  %frame=single,                   % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
-  language=Octave,                 % the language of the code
-  morekeywords={*,...},            % if you want to add more keywords to the set
-  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  %language=Octave,                 % the language of the code
+  %morekeywords={*,...},            % if you want to add more keywords to the set
+  %numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  %numbersep=5pt,                   % how far the line-numbers are from the code
+  %numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  %rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  %showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
   showstringspaces=false,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=0,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  %showtabs=false,                  % show tabs within strings adding particular underscores
+  %stepnumber=0,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{mymauve},     % string literal style
-  tabsize=2,                       % sets default tabsize to 2 spaces
-  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  tabsize=4,                       % sets default tabsize to 2 spaces
+  %title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+
+
 \usepackage{longtable}
 \usepackage{pifont}
 \usepackage{times}
 \usepackage{graphicx}
 \usepackage{subfigure}
 \pagestyle{plain}
-
 
 \newcommand{\rmv}[1]{}
 %\renewcommand{\baselinestretch}{1.6}
@@ -287,34 +288,79 @@ sudo ./mkmmc-android /dev/sdb MLO u-boot.bin uImage boot.scr rootfs.tar.bz2
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Install and uninstall applications}\label{HdDes}
-
-BBB is a low-cost, community-supported hardware device for embedded application development. BBB board mainly contains an ARM Cortex A8 series processor, a 512MB DDR3 RAM memory, an onboard 2GB MMC chip, with some other necessary peripherals. In this project, the BBB board is developed with following cables and devices: 
-
-
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\section{Running Applications}\label{SfDes}
-
-In this project, the software implementation includes installation, configuration as well as application of embedded OS, Web server, PHP, and MySQL; setup and website-based control of onboard LEDs and the C920 Web Camera. Fig.\ref{sw1} provides a block diagram of software description.
-	
-\subsection{Wireless Adapter Configuration}\label{Wireless}
-Once the OS is successfully set up on board, it becomes critical to have Internet access --- We need to install extra system utilities or download third-party libraries to support this project. So in this section, we detail how to set up a WiFi connection for BBB.
-
-
-To make the modifications into effect, we type in the following command from Secure Shell Client to restart the wirless adapter:
+Before install applications on the Beagleboard, ADB Daemon and network need to be set up.
+Enter following commands on host PC to install ADB via apt-get:
 \begin{lstlisting}[language={bash}]
-ifconfig wlan0 down && ifconfig wlan0 up
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install android-tools-adb
 \end{lstlisting}
-
-
-
-
-
+Next, the connection between host PC and Beagleboard needs to be set. To set the Host PC IP to 192.168.194.1:
+\begin{lstlisting}[language={bash}]
+sudo ifconfig eth0 192.168.194.1 netmask 255.255.255.224 up
+sudo route add 192.168.194.2 dev eth0
+\end{lstlisting}
+then set the IP of the board to 192.168.194.2, we could configure the board via Host PC using the command:
+\begin{lstlisting}[language={bash}]
+sudo minicom -c
+\end{lstlisting}
+the network setup command would be:
+\begin{lstlisting}[language={bash}]
+# ifconfig usb0 192.168.194.2 netmask 255.255.255.224 up
+\end{lstlisting}
+note that ``\#" indicates that the command is typed to configure Beagleboard via Minicom. We could PING the IP address of the board from Host PC to see if the connection is set correctly, see Fig. \ref{RunApp}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=4in]{./figs/lab1.png}
+    \caption{Connection test between Host PC and the board}
+    \label{lab1}
+\end{figure}
+Input the following commands to configure the on-board ADB service:
+\begin{lstlisting}[language={bash}]
+# setprop service.adb.tcp.port 5555
+# stop adbd
+# start adbd
+\end{lstlisting}
+On Host PC, enter the following commands to establish ADB connection:
+\begin{lstlisting}[language={bash}]
+export ADBHOST= 192.168.194.2
+adb kill-server
+adb start-server
+\end{lstlisting}
+To verifying the connection:
+\begin{lstlisting}[language={bash}]
+adb devices
+\end{lstlisting}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=4in]{./figs/lab2.png}
+    \caption{ADB connection established}
+    \label{lab2}
+\end{figure}
+Fig. \ref{lab2} indicates the ADB connection is established successfully.
+Now, we could also configure the board by either Minicom or ADB Shell. See Fig. \ref{lab3}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=4in]{./figs/lab3.png}
+    \caption{ADB connection established}
+    \label{lab3}
+\end{figure}
+After completing ADB connection setup, the on-board Android applications can be managed on Host PC, the following commands are examples of installation/uninstallation applications:
+\begin{lstlisting}[language={bash}]
+adb install qq.apk
+adb uninstall com.android.vending.apk.apk
+\end{lstlisting}
+An alternative way to uninstall applications:
+\begin{lstlisting}[language={bash}]
+sudo adb shell
+# rm /apk/file/path
+\end{lstlisting}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %	
-\section{Q\&A}\label{Con}
+\section{Q\&A}\label{QA}
 In this section, we answer those questions raised by the sample report.
 
 \begin{verbatim}
