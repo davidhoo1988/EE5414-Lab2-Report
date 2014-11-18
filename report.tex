@@ -150,18 +150,18 @@ Running Android OS on BeagleBone-XM platform requires following software compone
 \item Other Resources
 \end{itemize}
 
-First of all, Linux Kernel (uImage), Boot Loader (u-boot.in) and Bootstrapping (MLO)  are needed to construct a boot image; Then Android Filesystem should be built , in our experiment, we use Android Gingerbread for demonstration; Finally, other media resources, such as video and music are optional to be included for better human-machine interface. 
+First of all, Linux kernel (uImage), boot loader (u-boot.in) and bootstrapping (MLO)  are needed to construct a boot image; Then Android filesystem should be built , in our experiment, we use Android Gingerbread for demonstration; Finally, other media resources, such as video and music are optional to be included for better human-machine interface. 
 
 \subsection{Set Up Toolchains}
-In the experiment, we compile the source code to obtain these essential components using cross-platform C compiler --- arm-wabi-gcc 4.4.0.
-We can permanently include this compiler by adding the following command in ``$\sim$/.bashrc"
+In the experiment, we compile the source code to obtain these essential components using cross-platform C compiler --- arm-eabi-gcc 4.4.0.
+We can permanently include this compiler to the system variable PATH by adding the following command in ``$\sim$/.bashrc"
 
 \begin{lstlisting}[language={bash}]
 export PATH=~/mydroid/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/:$PATH
 \end{lstlisting}
 
 \subsection{Build Kernel}
-First, the source code for building kernel is under ~/mydroid/kernel, thus we change our working directory to that path:
+First, the source code for building kernel is under $\sim$/mydroid/kernel, thus we change our working directory to that path:
 
 \begin{lstlisting}[language={bash}]
 cd ~/mydroid/kernel
@@ -174,7 +174,7 @@ make CROSS_COMPILE=arm-eabi- omap3_beagle_android_defconfig
 make CROSS_COMPILE=arm-eabi- uImage
 \end{lstlisting}
 
-Normally, this process takes about 15 minutes, after which generates  Linux Kernel Image `uImage' in arch/arm/boot/. Fig. \ref{kernel}  shows  info displayed in the terminal when the compilation is completed.
+Normally, this process takes about 15 minutes, after which generates  Linux kernel image `uImage' in arch/arm/boot/. Fig. \ref{kernel}  shows  info displayed in the terminal when the compilation is completed.
 
 \begin{figure}[ht]
 	\centering
@@ -218,7 +218,7 @@ make CROSS_COMPILE=arm-eabi- omap3beagle_config
 make CROSS_COMPILE=arm-eabi-
 \end{lstlisting}
 
-This leads to the x-loader Image `x-load.bin' shown in Fig. \ref{x-loader}
+This leads to the x-loader image `x-load.bin' shown in Fig. \ref{x-loader}
 
 \begin{figure}[ht]
 	\centering
@@ -246,7 +246,7 @@ cd TI_Android_GingerBread_2_3_4_DevKit_2_1/TI_Android_GingerBread_2_3_4_DevKit_2
 \end{lstlisting}
  
 \subsection{Build Android Filesystem}
-Build Android filesystem for Beaglebone-xm by doing following:
+Build Android filesystem for Beaglebone-XM by doing following:
 
  \begin{lstlisting}[language={make}]
 make TARGET_PRODUCT=beagleboard OMAPES=5.x -j8
@@ -392,13 +392,13 @@ objcopy can help convert it into a different form, e.g. .bin file.
 boot.src is a U-Boot script. It contains instructions for U-Boot. Using these instruction, the kernel is loaded into memory, and (optionally) a ramdisk is loaded. boot.scr can also pass parameters to the kernel.
 
 \begin{verbatim}
->> Q4 <<
+>> Q5 <<
 > For the kernel compilation, try to explain the names marked, 
 > e.g. CLEAN, HOSTCC, HOSTLD, SHIPPED, UPD, CC, AS, GEN, CHK.
 \end{verbatim}
 \textbf{Reply:} In fact, these are nothing but variable alias defined in the makefile under 'kernel' directory.
 For example, AS indicates the specific assembler of arm-eabi-gcc-4.4.0; HOSTCC indicates the gcc preinstalled
-in the host Ubuntu OS; 
+in the host Ubuntu OS. 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
