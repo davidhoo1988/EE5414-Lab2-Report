@@ -289,39 +289,43 @@ sudo ./mkmmc-android /dev/sdb MLO u-boot.bin uImage boot.scr rootfs.tar.bz2
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Install and uninstall applications}\label{HdDes}
 Before install applications on the Beagleboard, ADB Daemon and network need to be set up.
-Enter following commands on host PC to install ADB via apt-get:
+Enter following commands on host PC to install ADB application via apt-get:
 \begin{lstlisting}[language={bash}]
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
 sudo apt-get install android-tools-adb
 \end{lstlisting}
-Next, the connection between host PC and Beagleboard needs to be set. To set the Host PC IP to 192.168.194.1:
+
+    \subsection{Configure Network Setting}
+The connection between Host PC and Beagleboard needs to be configured. The Host PC IP address can be set to 192.168.194.1 by typing the following commands:
 \begin{lstlisting}[language={bash}]
 sudo ifconfig eth0 192.168.194.1 netmask 255.255.255.224 up
 sudo route add 192.168.194.2 dev eth0
 \end{lstlisting}
-then set the IP of the board to 192.168.194.2, we could configure the board via Host PC using the command:
+then set the IP of Beagleboard to 192.168.194.2, we could configure the board via Host PC using Minicom:
 \begin{lstlisting}[language={bash}]
 sudo minicom -c
 \end{lstlisting}
-the network setup command would be:
+the onboard network setup command would be:
 \begin{lstlisting}[language={bash}]
 # ifconfig usb0 192.168.194.2 netmask 255.255.255.224 up
 \end{lstlisting}
-note that ``\#" indicates that the command is typed to configure Beagleboard via Minicom. We could PING the IP address of the board from Host PC to see if the connection is set correctly, see Fig. \ref{RunApp}.
+note that ``\#" indicates that the command is typed to configure Beagleboard via Minicom. We could PING the IP address of the board from Host PC to see if the connection is configured correctly, see Fig. \ref{lab1}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=4in]{./figs/lab1.png}
     \caption{Connection test between Host PC and the board}
     \label{lab1}
 \end{figure}
-Input the following commands to configure the on-board ADB service:
+
+    \subsection{Setup Connection via ADB}
+Using a network cable to connect the board and Host PC directly. Then input the following commands to configure the on-board ADB service:
 \begin{lstlisting}[language={bash}]
 # setprop service.adb.tcp.port 5555
 # stop adbd
 # start adbd
 \end{lstlisting}
-On Host PC, enter the following commands to establish ADB connection:
+On Host PC, enter the following commands to establish ADB connection to IP 192.168.194.2:
 \begin{lstlisting}[language={bash}]
 export ADBHOST= 192.168.194.2
 adb kill-server
@@ -337,7 +341,7 @@ adb devices
     \caption{ADB connection established}
     \label{lab2}
 \end{figure}
-Fig. \ref{lab2} indicates the ADB connection is established successfully.
+Fig. \ref{lab2} shows the board ``emulator-5554" is in the list of devices attached, this indicates the ADB connection is established successfully.
 Now, we could also configure the board by either Minicom or ADB Shell. See Fig. \ref{lab3}
 \begin{figure}[ht]
     \centering
@@ -350,7 +354,7 @@ After completing ADB connection setup, the on-board Android applications can be 
 adb install qq.apk
 adb uninstall com.android.vending.apk.apk
 \end{lstlisting}
-An alternative way to uninstall applications:
+An alternative way to uninstall applications is using ``rm" command to remove the onboard files of the target application directly:
 \begin{lstlisting}[language={bash}]
 sudo adb shell
 # rm /apk/file/path
