@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.2)  24 NOV 2014 14:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.2)  22 NOV 2014 12:29
 entering extended mode
-**report.tex
-("E:\Dropbox\LaTaX files\EE5414-Lab2-Report\report.tex"
+**report*-*Copy.tex
+("E:\Dropbox\LaTaX files\EE5414-Lab2-Report\report - Copy.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -607,7 +607,7 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 s\tikzlibrarytrees.code.tex"
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.0 (rcs-revision 1.2)
 )
-("E:\Dropbox\LaTaX files\EE5414-Lab2-Report\report.aux")
+("E:\Dropbox\LaTaX files\EE5414-Lab2-Report\report - Copy.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
 LaTeX Font Info:    ... okay on input line 93.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
@@ -643,124 +643,26 @@ Package pdftex.def Info: ./figs/logo.png used on input line 105.
 (pdftex.def)             Requested size: 70.46037pt x 69.52513pt.
 
 [0{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <E:/Dropbox/LaTaX files/
-EE5414-Lab2-Report/figs/logo.png>]
-LaTeX Font Info:    Try loading font information for U+lasy on input line 148.
+EE5414-Lab2-Report/figs/logo.png>] [1
 
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 148.
-
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 148.
-
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2014/03/04 1.5c listings language file
-)
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2014/03/04 1.5c listings language file
-)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 159.
-
-
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2014/03/04 1.5c listings language file
-)
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
-File: lstlang2.sty 2014/03/04 1.5c listings language file
-)
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
-)
-<./figs/kernel.png, id=13, 1035.11719pt x 659.46375pt>
-File: ./figs/kernel.png Graphic file (type png)
- <use ./figs/kernel.png>
-Package pdftex.def Info: ./figs/kernel.png used on input line 181.
-(pdftex.def)             Requested size: 289.07999pt x 184.16557pt.
-
-[1
-
-] <./figs/uboot.png, id=20, 1380.15625pt x 879.285pt>
-File: ./figs/uboot.png Graphic file (type png)
- <use ./figs/uboot.png>
-Package pdftex.def Info: ./figs/uboot.png used on input line 200.
-(pdftex.def)             Requested size: 289.07999pt x 184.17229pt.
-
-<./figs/x-loader.png, id=21, 1380.15625pt x 879.285pt>
-File: ./figs/x-loader.png Graphic file (type png)
-
-<use ./figs/x-loader.png>
-Package pdftex.def Info: ./figs/x-loader.png used on input line 225.
-(pdftex.def)             Requested size: 289.07999pt x 184.17229pt.
- [2 <E:/Dropbox/LaTaX files/EE5414-Lab2-Report/figs/kernel.png>] [3 <E:/Dropbox
-/LaTaX files/EE5414-Lab2-Report/figs/uboot.png> <E:/Dropbox/LaTaX files/EE5414-
-Lab2-Report/figs/x-loader.png>]
-File: ./figs/x-loader.png Graphic file (type png)
-
-<use ./figs/x-loader.png>
-Package pdftex.def Info: ./figs/x-loader.png used on input line 258.
-(pdftex.def)             Requested size: 289.07999pt x 184.17229pt.
- <./figs/bb-xm.png, id=31, 805.0075pt x 581.17125pt>
-File: ./figs/bb-xm.png Graphic file (type png)
-
-<use ./figs/bb-xm.png>
-Package pdftex.def Info: ./figs/bb-xm.png used on input line 276.
-(pdftex.def)             Requested size: 289.07999pt x 208.69827pt.
-
-Overfull \hbox (2.72789pt too wide) in paragraph at lines 273--280
-[]\OT1/ptm/m/n/12 For sim-plic-ity, we re-ar-range those files com-piled from s
-ource code into one folder `beagleboard-
- []
-
-[4] [5 <E:/Dropbox/LaTaX files/EE5414-Lab2-Report/figs/bb-xm.png>]
-<./figs/lab1.png, id=39, 541.27219pt x 253.69781pt>
-File: ./figs/lab1.png Graphic file (type png)
- <use ./figs/lab1.png>
-Package pdftex.def Info: ./figs/lab1.png used on input line 316.
-(pdftex.def)             Requested size: 289.07999pt x 135.49666pt.
-
-[6 <E:/Dropbox/LaTaX files/EE5414-Lab2-Report/figs/lab1.png>]
-<./figs/lab2.png, id=45, 516.42938pt x 134.75343pt>
-File: ./figs/lab2.png Graphic file (type png)
- <use ./figs/lab2.png>
-Package pdftex.def Info: ./figs/lab2.png used on input line 340.
-(pdftex.def)             Requested size: 289.07999pt x 75.43262pt.
-
-<./figs/lab3.png, id=46, 520.94624pt x 344.78813pt>
-File: ./figs/lab3.png Graphic file (type png)
- <use ./figs/lab3.png>
-Package pdftex.def Info: ./figs/lab3.png used on input line 348.
-(pdftex.def)             Requested size: 289.07999pt x 191.3281pt.
-
-[7 <E:/Dropbox/LaTaX files/EE5414-Lab2-Report/figs/lab2.png> <E:/Dropbox/LaTaX 
-files/EE5414-Lab2-Report/figs/lab3.png>] [8] [9]
-("E:\Dropbox\LaTaX files\EE5414-Lab2-Report\report.aux") ) 
+]
+("E:\Dropbox\LaTaX files\EE5414-Lab2-Report\report - Copy.aux") ) 
 Here is how much of TeX's memory you used:
- 14621 strings out of 493921
- 278586 string characters out of 3144859
- 350116 words of memory out of 3000000
- 17606 multiletter control sequences out of 15000+200000
- 47136 words of font info for 95 fonts, out of 3000000 for 9000
+ 14202 strings out of 493921
+ 272643 string characters out of 3144859
+ 299947 words of memory out of 3000000
+ 17241 multiletter control sequences out of 15000+200000
+ 38958 words of font info for 68 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,12n,54p,410b,965s stack positions out of 5000i,500n,10000p,200000b,50000s
-{F:/Program Files (x8
-6)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<F:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/urw/courier/ucrr8a.pfb><F:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/urw/times/utmb8a.pfb><F:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/time
-s/utmr8a.pfb><F:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on report.pdf (10 pages, 760835 bytes).
+ 55i,11n,54p,417b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
+{F:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<F:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><F:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/urw/times/utmr8a.pfb><F:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on "report - Copy.pdf" (2 pages, 40894 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
+ 27 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
